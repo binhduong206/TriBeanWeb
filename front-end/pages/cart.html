@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Your Cart — TriBean Coffee</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="../../css/base/variables.css" />
+        <link rel="stylesheet" href="../../css/base/reset.css" />
+        <link rel="stylesheet" href="../../css/base/global.css" />
+        <link rel="stylesheet" href="../../css/layouts/header.css" />
+        <link rel="stylesheet" href="../../css/layouts/footer.css" />
+        <link rel="stylesheet" href="../../css/pages/cart.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header id="header" class="header header--static"></header>
+
+            <!-- BREADCRUMB -->
+            <div class="cart-breadcrumb">
+                <div class="cart-bc__inner">
+                    <a href="../../index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Your Cart</span>
+                </div>
+            </div>
+
+            <main class="cart-main">
+                <div class="cart-container">
+                    <!-- ===== HEADER ROW ===== -->
+                    <div class="cart-heading">
+                        <h1 class="cart-heading__title">
+                            Your Cart
+                            <span
+                                class="cart-heading__count"
+                                id="cart-total-count"
+                                >0 items</span
+                            >
+                        </h1>
+                        <button class="cart-clear-btn" id="cart-clear-all">
+                            <i class="fa-solid fa-trash-can"></i> Clear all
+                        </button>
+                    </div>
+
+                    <!-- ===== SPLIT LAYOUT ===== -->
+                    <div class="cart-layout">
+                        <!-- LEFT — item list -->
+                        <div class="cart-items-col">
+                            <!-- Progress bar -->
+                            <div class="cart-delivery-bar" id="delivery-bar">
+                                <div class="cart-delivery-bar__track">
+                                    <div
+                                        class="cart-delivery-bar__fill"
+                                        id="delivery-fill"
+                                        style="width: 0%"
+                                    ></div>
+                                </div>
+                                <p
+                                    class="cart-delivery-bar__label"
+                                    id="delivery-label"
+                                >
+                                    Add
+                                    <strong id="delivery-remaining"
+                                        >$10.00</strong
+                                    >
+                                    more for free delivery 🚀
+                                </p>
+                            </div>
+
+                            <!-- Item list -->
+                            <div class="cart-items" id="cart-items">
+                                <!-- Rendered by JS -->
+                            </div>
+
+                            <!-- Empty state -->
+                            <div class="cart-empty" id="cart-empty" hidden>
+                                <div class="cart-empty__icon">☕</div>
+                                <p class="cart-empty__title">
+                                    Your cart is empty
+                                </p>
+                                <p class="cart-empty__sub">
+                                    Looks like you haven't added anything yet.
+                                </p>
+                                <a
+                                    href="../pages/menu.html"
+                                    class="cart-empty__btn"
+                                >
+                                    Browse Menu
+                                </a>
+                            </div>
+
+                            <!-- Coupon -->
+                            <div class="cart-coupon" id="cart-coupon">
+                                <div class="cart-coupon__input-wrap">
+                                    <i
+                                        class="fa-solid fa-tag cart-coupon__icon"
+                                    ></i>
+                                    <input
+                                        type="text"
+                                        class="cart-coupon__input"
+                                        id="coupon-input"
+                                        placeholder="Enter coupon code"
+                                    />
+                                    <button
+                                        class="cart-coupon__btn"
+                                        id="coupon-apply"
+                                    >
+                                        Apply
+                                    </button>
+                                </div>
+                                <p class="cart-coupon__msg" id="coupon-msg"></p>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT — order summary -->
+                        <div class="cart-summary-col" id="cart-summary-col">
+                            <div class="cart-summary">
+                                <h2 class="cart-summary__title">
+                                    Order Summary
+                                </h2>
+
+                                <div class="cart-summary__rows">
+                                    <div class="cart-summary__row">
+                                        <span>Subtotal</span>
+                                        <span id="summary-subtotal">$0.00</span>
+                                    </div>
+                                    <div
+                                        class="cart-summary__row"
+                                        id="summary-discount-row"
+                                        style="display: none"
+                                    >
+                                        <span>Discount</span>
+                                        <span
+                                            id="summary-discount"
+                                            class="cart-summary__discount"
+                                            >-$0.00</span
+                                        >
+                                    </div>
+                                    <div class="cart-summary__row">
+                                        <span>Delivery</span>
+                                        <span id="summary-delivery">$1.50</span>
+                                    </div>
+                                </div>
+
+                                <div class="cart-summary__divider"></div>
+
+                                <div class="cart-summary__total-row">
+                                    <span>Total</span>
+                                    <span id="summary-total">$0.00</span>
+                                </div>
+
+                                <button
+                                    class="cart-checkout-btn"
+                                    id="checkout-btn"
+                                >
+                                    <i class="fa-solid fa-lock"></i>
+                                    Proceed to Checkout
+                                </button>
+
+                                <a
+                                    href="../menu/index.html"
+                                    class="cart-continue-link"
+                                >
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                    Continue shopping
+                                </a>
+
+                                <!-- Perks -->
+                                <div class="cart-summary__perks">
+                                    <div class="cart-summary__perk">
+                                        <i
+                                            class="fa-solid fa-shield-halved"
+                                        ></i>
+                                        Secure checkout
+                                    </div>
+                                    <div class="cart-summary__perk">
+                                        <i class="fa-solid fa-rotate-left"></i>
+                                        Remake guarantee
+                                    </div>
+                                    <div class="cart-summary__perk">
+                                        <i class="fa-solid fa-leaf"></i>
+                                        Eco packaging
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer id="footer" class="footer"></footer>
+        </div>
+
+        <script src="../../js/layouts/partials.js"></script>
+        <script type="module" src="../../js/pages/cart.js"></script>
+    </body>
+</html>

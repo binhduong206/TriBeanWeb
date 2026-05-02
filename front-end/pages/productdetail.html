@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Coconut Coffee — TriBean</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Base -->
+        <link rel="stylesheet" href="../../css/base/variables.css" />
+        <link rel="stylesheet" href="../../css/base/reset.css" />
+        <link rel="stylesheet" href="../../css/base/global.css" />
+
+        <!-- Components -->
+        <link rel="stylesheet" href="../../css/components/card.css" />
+
+        <!-- Layouts -->
+        <link rel="stylesheet" href="../../css/layouts/header.css" />
+        <link rel="stylesheet" href="../../css/layouts/footer.css" />
+
+        <!-- Page -->
+        <link rel="stylesheet" href="../css/pages/productdetail.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header id="header" class="header header--static"></header>
+
+            <!-- BREADCRUMB -->
+            <div class="pd-breadcrumb">
+                <div class="pd-container">
+                    <a href="/">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="./menu.html">Menu</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span id="pd-breadcrumb-name"></span>
+                </div>
+            </div>
+
+            <main class="pd-main">
+                <div class="pd-container">
+                    <!-- ===== HERO SPLIT ===== -->
+                    <section class="pd-hero">
+                        <!-- LEFT: image gallery -->
+                        <div class="pd-gallery">
+                            <div class="pd-gallery__main">
+                                <img id="gallery-main-img" src="" alt="" />
+                                <button
+                                    class="pd-gallery__fav"
+                                    id="fav-btn"
+                                    aria-label="Favourite"
+                                >
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                                <div
+                                    class="pd-gallery__badge is-hidden"
+                                    id="pd-badge"
+                                ></div>
+                            </div>
+                            <div class="pd-gallery__thumbs" id="pd-thumbs">
+                                <div
+                                    class="pd-gallery__thumb active"
+                                    data-src=""
+                                >
+                                    <img src="" alt="View 1" />
+                                </div>
+                                <div class="pd-gallery__thumb" data-src="">
+                                    <img src="" alt="View 2" />
+                                </div>
+                                <div class="pd-gallery__thumb" data-src="">
+                                    <img src="" alt="View 3" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: info -->
+                        <div class="pd-info">
+                            <div class="pd-info__tags">
+                                <span
+                                    class="pd-tag pd-tag--cat"
+                                    id="pd-tag-cat"
+                                ></span>
+                                <span
+                                    class="pd-tag pd-tag--new is-hidden"
+                                    id="pd-tag-badge"
+                                    >New Recipe</span
+                                >
+                            </div>
+
+                            <h1 class="pd-info__name" id="pd-name"></h1>
+
+                            <div class="pd-info__meta">
+                                <div class="pd-rating">
+                                    <span id="pd-stars-hero"></span>
+                                    <span
+                                        class="pd-rating__score"
+                                        id="pd-rating-score"
+                                    ></span>
+                                    <span
+                                        class="pd-rating__count"
+                                        id="pd-rating-count"
+                                    ></span>
+                                </div>
+                                <span class="pd-info__divider">·</span>
+                                <span class="pd-info__sold" id="pd-sold"></span>
+                            </div>
+
+                            <p class="pd-info__desc" id="pd-desc"></p>
+
+                            <!-- Price -->
+                            <div class="pd-price-row">
+                                <span class="pd-price" id="pd-price"></span>
+                                <span
+                                    class="pd-price--old"
+                                    id="pd-price-old"
+                                ></span>
+                                <span
+                                    class="pd-price--badge"
+                                    id="pd-price-badge"
+                                ></span>
+                            </div>
+
+                            <!-- Options: Size -->
+                            <div class="pd-option">
+                                <p class="pd-option__label">Size</p>
+                                <div class="pd-option__btns" id="size-group">
+                                    <button
+                                        class="pd-opt-btn active"
+                                        data-price="0"
+                                    >
+                                        S — 250ml
+                                    </button>
+                                    <button class="pd-opt-btn" data-price="0.5">
+                                        M — 350ml
+                                    </button>
+                                    <button class="pd-opt-btn" data-price="1">
+                                        L — 500ml
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Quantity + CTA -->
+                            <div class="pd-actions">
+                                <div class="pd-qty">
+                                    <button class="pd-qty__btn" id="qty-minus">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <span class="pd-qty__val" id="qty-val"
+                                        >1</span
+                                    >
+                                    <button class="pd-qty__btn" id="qty-plus">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                                <button
+                                    class="pd-btn pd-btn--primary"
+                                    id="add-to-cart"
+                                >
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    Add to cart —
+                                    <span id="cart-price">$2.90</span>
+                                </button>
+                                <button class="pd-btn pd-btn--ghost">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
+
+                            <!-- Perks strip -->
+                            <div class="pd-perks">
+                                <div class="pd-perk">
+                                    <i class="fa-solid fa-truck-fast"></i>
+                                    Free delivery over $10
+                                </div>
+                                <div class="pd-perk">
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                    Remake if unsatisfied
+                                </div>
+                                <div class="pd-perk">
+                                    <i class="fa-solid fa-leaf"></i>
+                                    Eco cup available
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ===== TABS: Description / Nutrition / Reviews ===== -->
+                    <section class="pd-tabs">
+                        <div class="pd-tabs__nav">
+                            <button
+                                class="pd-tab-btn active"
+                                data-tab="description"
+                            >
+                                Description
+                            </button>
+                            <button class="pd-tab-btn" data-tab="nutrition">
+                                Nutrition
+                            </button>
+                            <button class="pd-tab-btn" data-tab="reviews">
+                                Reviews (128)
+                            </button>
+                        </div>
+
+                        <!-- Tab: Description -->
+                        <div class="pd-tab-panel active" id="tab-description">
+                            <div class="pd-desc-grid">
+                                <div class="pd-desc-text">
+                                    <h3>About this drink</h3>
+                                    <p>
+                                        Our Coconut Coffee is a celebration of
+                                        Vietnam's two greatest gifts — robust
+                                        highland coffee and fresh coconut. We
+                                        cold-brew our single-origin Đắk Lắk
+                                        robusta overnight, then layer it over a
+                                        house-made coconut milk foam that's been
+                                        whipped to a cloud-like consistency.
+                                    </p>
+                                    <p>
+                                        The result is a drink that hits you with
+                                        bold, slightly bitter espresso first,
+                                        then melts into a tropical sweetness on
+                                        the finish. It's been our #1 seller for
+                                        three seasons running — and for good
+                                        reason.
+                                    </p>
+                                    <h3>Ingredients</h3>
+                                    <ul class="pd-ingredients">
+                                        <li>
+                                            <i
+                                                class="fa-solid fa-circle-dot"
+                                            ></i>
+                                            Single-origin Đắk Lắk robusta
+                                            espresso
+                                        </li>
+                                        <li>
+                                            <i
+                                                class="fa-solid fa-circle-dot"
+                                            ></i>
+                                            Fresh coconut milk (no
+                                            preservatives)
+                                        </li>
+                                        <li>
+                                            <i
+                                                class="fa-solid fa-circle-dot"
+                                            ></i>
+                                            Coconut cream foam
+                                        </li>
+                                        <li>
+                                            <i
+                                                class="fa-solid fa-circle-dot"
+                                            ></i>
+                                            Condensed milk (optional, 30%+
+                                            sugar)
+                                        </li>
+                                        <li>
+                                            <i
+                                                class="fa-solid fa-circle-dot"
+                                            ></i>
+                                            Himalayan pink salt (pinch)
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pd-desc-aside">
+                                    <div class="pd-origin-card">
+                                        <div class="pd-origin-card__icon">
+                                            <i class="fa-solid fa-seedling"></i>
+                                        </div>
+                                        <p class="pd-origin-card__label">
+                                            Origin
+                                        </p>
+                                        <p class="pd-origin-card__value">
+                                            Đắk Lắk, Vietnam
+                                        </p>
+                                        <p class="pd-origin-card__note">
+                                            Grown at 600–900m elevation.
+                                            Harvested Nov–Jan.
+                                        </p>
+                                    </div>
+                                    <div class="pd-origin-card">
+                                        <div class="pd-origin-card__icon">
+                                            <i
+                                                class="fa-solid fa-fire-flame-curved"
+                                            ></i>
+                                        </div>
+                                        <p class="pd-origin-card__label">
+                                            Roast profile
+                                        </p>
+                                        <p class="pd-origin-card__value">
+                                            Medium-dark
+                                        </p>
+                                        <p class="pd-origin-card__note">
+                                            Roasted in-house every Monday &
+                                            Thursday.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab: Nutrition -->
+                        <div class="pd-tab-panel" id="tab-nutrition">
+                            <div class="pd-nutrition">
+                                <p class="pd-nutrition__note">
+                                    Per serving (S — 250ml, 0% sugar, no ice)
+                                </p>
+                                <div class="pd-nutrition__grid">
+                                    <div class="pd-nutr-card">
+                                        <span class="pd-nutr-card__val"
+                                            >95</span
+                                        >
+                                        <span class="pd-nutr-card__unit"
+                                            >kcal</span
+                                        >
+                                        <span class="pd-nutr-card__label"
+                                            >Calories</span
+                                        >
+                                    </div>
+                                    <div class="pd-nutr-card">
+                                        <span class="pd-nutr-card__val"
+                                            >3.2</span
+                                        >
+                                        <span class="pd-nutr-card__unit"
+                                            >g</span
+                                        >
+                                        <span class="pd-nutr-card__label"
+                                            >Fat</span
+                                        >
+                                    </div>
+                                    <div class="pd-nutr-card">
+                                        <span class="pd-nutr-card__val"
+                                            >8.4</span
+                                        >
+                                        <span class="pd-nutr-card__unit"
+                                            >g</span
+                                        >
+                                        <span class="pd-nutr-card__label"
+                                            >Carbs</span
+                                        >
+                                    </div>
+                                    <div class="pd-nutr-card">
+                                        <span class="pd-nutr-card__val"
+                                            >2.1</span
+                                        >
+                                        <span class="pd-nutr-card__unit"
+                                            >g</span
+                                        >
+                                        <span class="pd-nutr-card__label"
+                                            >Protein</span
+                                        >
+                                    </div>
+                                    <div class="pd-nutr-card">
+                                        <span class="pd-nutr-card__val"
+                                            >80</span
+                                        >
+                                        <span class="pd-nutr-card__unit"
+                                            >mg</span
+                                        >
+                                        <span class="pd-nutr-card__label"
+                                            >Caffeine</span
+                                        >
+                                    </div>
+                                    <div class="pd-nutr-card">
+                                        <span class="pd-nutr-card__val">0</span>
+                                        <span class="pd-nutr-card__unit"
+                                            >g</span
+                                        >
+                                        <span class="pd-nutr-card__label"
+                                            >Sugar</span
+                                        >
+                                    </div>
+                                </div>
+                                <p class="pd-nutrition__disclaimer">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    Values are estimates. Actual nutrition may
+                                    vary depending on size and customisation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Tab: Reviews -->
+                        <div class="pd-tab-panel" id="tab-reviews">
+                            <div class="pd-reviews">
+                                <div class="pd-reviews__summary">
+                                    <div class="pd-reviews__score">
+                                        <span
+                                            class="pd-reviews__big"
+                                            id="pd-reviews-big"
+                                            >4.9</span
+                                        >
+                                        <div
+                                            class="pd-reviews__stars"
+                                            id="pd-reviews-stars"
+                                        >
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i
+                                                class="fa-solid fa-star-half-stroke"
+                                            ></i>
+                                        </div>
+                                        <span
+                                            class="pd-reviews__total"
+                                            id="pd-reviews-total"
+                                            >128 reviews</span
+                                        >
+                                    </div>
+                                    <div class="pd-reviews__bars">
+                                        <div class="pd-bar-row">
+                                            <span>5★</span>
+                                            <div class="pd-bar">
+                                                <div
+                                                    class="pd-bar__fill"
+                                                    style="width: 82%"
+                                                ></div>
+                                            </div>
+                                            <span>82%</span>
+                                        </div>
+                                        <div class="pd-bar-row">
+                                            <span>4★</span>
+                                            <div class="pd-bar">
+                                                <div
+                                                    class="pd-bar__fill"
+                                                    style="width: 12%"
+                                                ></div>
+                                            </div>
+                                            <span>12%</span>
+                                        </div>
+                                        <div class="pd-bar-row">
+                                            <span>3★</span>
+                                            <div class="pd-bar">
+                                                <div
+                                                    class="pd-bar__fill"
+                                                    style="width: 4%"
+                                                ></div>
+                                            </div>
+                                            <span>4%</span>
+                                        </div>
+                                        <div class="pd-bar-row">
+                                            <span>2★</span>
+                                            <div class="pd-bar">
+                                                <div
+                                                    class="pd-bar__fill"
+                                                    style="width: 1%"
+                                                ></div>
+                                            </div>
+                                            <span>1%</span>
+                                        </div>
+                                        <div class="pd-bar-row">
+                                            <span>1★</span>
+                                            <div class="pd-bar">
+                                                <div
+                                                    class="pd-bar__fill"
+                                                    style="width: 1%"
+                                                ></div>
+                                            </div>
+                                            <span>1%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pd-reviews__list">
+                                    <div class="pd-review-card">
+                                        <div class="pd-review-card__top">
+                                            <div class="pd-review-card__avatar">
+                                                LN
+                                            </div>
+                                            <div>
+                                                <p class="pd-review-card__name">
+                                                    Linh Nguyễn
+                                                </p>
+                                                <div
+                                                    class="pd-review-card__stars"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i>
+                                                </div>
+                                            </div>
+                                            <span class="pd-review-card__date"
+                                                >Apr 2026</span
+                                            >
+                                        </div>
+                                        <p class="pd-review-card__text">
+                                            The coconut foam is absolutely
+                                            dreamy — light as air and perfectly
+                                            balanced with the bitter espresso. I
+                                            order this every single morning now.
+                                            10/10 no notes.
+                                        </p>
+                                        <div class="pd-review-card__opts">
+                                            <span>M size</span
+                                            ><span>0% sugar</span
+                                            ><span>Less ice</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="pd-review-card">
+                                        <div class="pd-review-card__top">
+                                            <div class="pd-review-card__avatar">
+                                                MT
+                                            </div>
+                                            <div>
+                                                <p class="pd-review-card__name">
+                                                    Minh Trần
+                                                </p>
+                                                <div
+                                                    class="pd-review-card__stars"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-regular fa-star"
+                                                    ></i>
+                                                </div>
+                                            </div>
+                                            <span class="pd-review-card__date"
+                                                >Mar 2026</span
+                                            >
+                                        </div>
+                                        <p class="pd-review-card__text">
+                                            Great coffee, very refreshing. I'd
+                                            suggest trying the L size — much
+                                            better value. The robusta kicks hard
+                                            which I love but might be too strong
+                                            for beginners.
+                                        </p>
+                                        <div class="pd-review-card__opts">
+                                            <span>L size</span
+                                            ><span>30% sugar</span
+                                            ><span>Normal ice</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="pd-review-card">
+                                        <div class="pd-review-card__top">
+                                            <div class="pd-review-card__avatar">
+                                                HP
+                                            </div>
+                                            <div>
+                                                <p class="pd-review-card__name">
+                                                    Hà Phương
+                                                </p>
+                                                <div
+                                                    class="pd-review-card__stars"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i
+                                                    ><i
+                                                        class="fa-solid fa-star"
+                                                    ></i>
+                                                </div>
+                                            </div>
+                                            <span class="pd-review-card__date"
+                                                >Mar 2026</span
+                                            >
+                                        </div>
+                                        <p class="pd-review-card__text">
+                                            Uống xong không thể quay đầu. Foam
+                                            dừa nhẹ như mây, cà phê thơm đúng
+                                            kiểu robusta Tây Nguyên. TriBean đã
+                                            ghim được tim mình rồi!
+                                        </p>
+                                        <div class="pd-review-card__opts">
+                                            <span>S size</span
+                                            ><span>0% sugar</span
+                                            ><span>No ice</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <footer id="footer" class="footer"></footer>
+        </div>
+
+        <script src="../js/layouts/partials.js"></script>
+        <script type="module" src="../js/pages/productdetail.js"></script>
+        <!-- <script type="module" src="../js/pages/productdetailtemp.js"></script> -->
+    </body>
+</html>

@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TriBean Coffee</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- 1. Variables -->
+        <link rel="stylesheet" href="./css/base/variables.css" />
+
+        <!-- 2. Reset -->
+        <link rel="stylesheet" href="./css/base/reset.css" />
+
+        <!-- 3. Global -->
+        <link rel="stylesheet" href="./css/base/global.css" />
+
+        <!-- 4. Components -->
+        <link rel="stylesheet" href="./css/components/card.css" />
+
+        <!-- 5. Layout -->
+        <link rel="stylesheet" href="./css/layouts/header.css" />
+        <link rel="stylesheet" href="./css/layouts/footer.css" />
+
+        <!-- 6. Home -->
+        <link rel="stylesheet" href="./css/pages/home.css" />
+
+        <!-- 7. Best seller filter -->
+        <link rel="stylesheet" href="./css/components/bestseller_filter.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+        />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header id="header" class="header"></header>
+
+            <div class="banner__container">
+                <div class="banner__list">
+                    <div class="banner__item">
+                        <img
+                            src="../../assets/banner_img/slide_1_img.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="banner__item">
+                        <img
+                            src="../../assets/banner_img/slide_2_img.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="banner__item">
+                        <img
+                            src="../../assets/banner_img/slide_3_img.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div class="banner__button">
+                    <button class="banner__button-prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button class="banner__button-next">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                <ul class="banner__dot">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <main id="main" class="main">
+                <section class="ourstory">
+                    <div class="container">
+                        <div class="ourstory__title">
+                            <span
+                                class="char1"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-11px)
+                                        translateY(30px) rotate(-15deg);
+                                "
+                                >O</span
+                            ><span
+                                class="char2"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-9px) translateY(21px)
+                                        rotate(-9deg);
+                                "
+                                >U</span
+                            ><span
+                                class="char3"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-6px) translateY(14px)
+                                        rotate(-5deg);
+                                "
+                                >R</span
+                            ><span
+                                class="char4"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-5px) translateY(3px)
+                                        rotate(-6deg);
+                                "
+                                >&nbsp;</span
+                            ><span
+                                class="char5"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-4px) translateY(10px)
+                                        rotate(-3deg);
+                                "
+                                >S</span
+                            ><span
+                                class="char6"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-2px) translateY(9px)
+                                        rotate(0deg);
+                                "
+                                >T</span
+                            ><span
+                                class="char7"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(0px) translateY(9px)
+                                        rotate(3deg);
+                                "
+                                >O</span
+                            ><span
+                                class="char8"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(3px) translateY(13px)
+                                        rotate(5deg);
+                                "
+                                >R</span
+                            ><span
+                                class="char9"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(7px) translateY(17px)
+                                        rotate(9deg);
+                                "
+                                >I</span
+                            ><span
+                                class="char10"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(11px) translateY(23px)
+                                        rotate(13deg);
+                                "
+                                >E</span
+                            ><span
+                                class="char11"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(15px) translateY(34px)
+                                        rotate(21deg);
+                                "
+                                >S</span
+                            >
+                        </div>
+
+                        <div class="ourstory__content">
+                            <p class="content__text">
+                                We believe that smile is the sweetest taste in
+                                every new day. From the rich cups of coffee, the
+                                refreshing cups of tea, to each familiar
+                                greeting, we hope that every guest who comes
+                                here will bring a little joy - and then that
+                                smile will be spread everywhere.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="banner-float">
+                    <div class="banner-float__wrapper">
+                        <div class="banner-float__main">
+                            <img
+                                src="../../assets/banner_img/banner_float/banner_float_main2.web"
+                                alt=""
+                            />
+                        </div>
+                        <div class="banner-float__item banner-float__item--1">
+                            <img
+                                src="../../assets/banner_img/banner_float/banner_float_1.webp"
+                                alt=""
+                            />
+                        </div>
+                        <div class="banner-float__item banner-float__item--2">
+                            <img
+                                src="../../assets/banner_img/banner_float/banner_float_2.webp"
+                                alt=""
+                            />
+                        </div>
+                        <div class="banner-float__item banner-float__item--3">
+                            <img
+                                src="../../assets/banner_img/banner_float/banner_float_3.webp"
+                                alt=""
+                            />
+                        </div>
+                        <div
+                            class="banner-float__badge banner-float__badge--right"
+                        >
+                            #tribean
+                        </div>
+                        <div
+                            class="banner-float__badge banner-float__badge--left"
+                        >
+                            Welcome 💖
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bestseller">
+                    <div class="bestseller__wrapper">
+                        <div class="bestseller__title">
+                            <span
+                                class="char1"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-11px)
+                                        translateY(34px) rotate(-21deg);
+                                "
+                                >B</span
+                            ><span
+                                class="char2"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-9px) translateY(22px)
+                                        rotate(-13deg);
+                                "
+                                >E</span
+                            ><span
+                                class="char3"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-6px) translateY(15px)
+                                        rotate(-9deg);
+                                "
+                                >S</span
+                            ><span
+                                class="char4"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-5px) translateY(12px)
+                                        rotate(-5deg);
+                                "
+                                >T</span
+                            ><span
+                                class="char5"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-4px) translateY(12px)
+                                        rotate(-3deg);
+                                "
+                                >&nbsp;</span
+                            ><span
+                                class="char6"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(-3px) translateY(10px)
+                                        rotate(0deg);
+                                "
+                                >S</span
+                            ><span
+                                class="char7"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(0px) translateY(10px)
+                                        rotate(1deg);
+                                "
+                                >E</span
+                            ><span
+                                class="char8"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(5px) translateY(12px)
+                                        rotate(5deg);
+                                "
+                                >L</span
+                            ><span
+                                class="char9"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(8px) translateY(15px)
+                                        rotate(9deg);
+                                "
+                                >L</span
+                            ><span
+                                class="char10"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(11px) translateY(22px)
+                                        rotate(13deg);
+                                "
+                                >E</span
+                            ><span
+                                class="char11"
+                                style="
+                                    display: inline-block;
+                                    transition: none;
+                                    transform: translateX(15px) translateY(34px)
+                                        rotate(21deg);
+                                "
+                                >R</span
+                            >
+                        </div>
+
+                        <div class="bestseller__filter">
+                            <div class="bestseller__filter-header">
+                                <div class="bestseller__filter-left">
+                                    <p class="bestseller__filter-label">
+                                        Browse by category
+                                    </p>
+                                </div>
+                                <span
+                                    class="bestseller__filter-count"
+                                    id="filter-count"
+                                ></span>
+                            </div>
+
+                            <div class="bestseller__pills" id="filter-pills">
+                                <div class="bestseller__buttons">
+                                    <button
+                                        class="bestseller__pill active"
+                                        data-cat="all"
+                                    >
+                                        <span
+                                            class="bestseller__pill-dot"
+                                            style="
+                                                background: var(
+                                                    --color-primary
+                                                );
+                                            "
+                                        ></span>
+                                        All drinks
+                                        <span
+                                            class="bestseller__pill-count"
+                                        ></span>
+                                    </button>
+                                    <button
+                                        class="bestseller__pill"
+                                        data-cat="coffee"
+                                    >
+                                        <span
+                                            class="bestseller__pill-dot"
+                                            style="background: #c0392b"
+                                        ></span>
+                                        Coffee
+                                        <span
+                                            class="bestseller__pill-count"
+                                        ></span>
+                                    </button>
+                                    <button
+                                        class="bestseller__pill"
+                                        data-cat="tea"
+                                    >
+                                        <span
+                                            class="bestseller__pill-dot"
+                                            style="background: #27ae60"
+                                        ></span>
+                                        Tea
+                                        <span
+                                            class="bestseller__pill-count"
+                                        ></span>
+                                    </button>
+                                    <button
+                                        class="bestseller__pill"
+                                        data-cat="matcha"
+                                    >
+                                        <span
+                                            class="bestseller__pill-dot"
+                                            style="background: #8bc34a"
+                                        ></span>
+                                        Matcha
+                                        <span
+                                            class="bestseller__pill-count"
+                                        ></span>
+                                    </button>
+                                    <button
+                                        class="bestseller__pill"
+                                        data-cat="special"
+                                    >
+                                        <span
+                                            class="bestseller__pill-dot"
+                                            style="
+                                                background: var(--color-price);
+                                            "
+                                        ></span>
+                                        Specials
+                                        <span
+                                            class="bestseller__pill-count"
+                                        ></span>
+                                    </button>
+                                </div>
+                                <a
+                                    href="./pages/menu.html"
+                                    class="bestseller__show-more"
+                                    >Show More<i
+                                        class="fa-solid fa-arrow-right"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <div class="bestseller__products">
+                            <div class="bestseller__viewport">
+                                <div class="bestseller__list">
+                                    <!-- Items -->
+                                </div>
+                            </div>
+
+                            <div
+                                class="bestseller__button bestseller__button-prev"
+                            >
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </div>
+
+                            <div
+                                class="bestseller__button bestseller__button-next"
+                            >
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="whytribean">
+                    <div class="whytribean__wrapper">
+                        <div class="whytribean__heading">
+                            <p class="whytribean__sub">More than just coffee</p>
+                            <h2 class="whytribean__title">Why TriBean?</h2>
+                        </div>
+
+                        <div class="whytribean__grid">
+                            <div class="whytribean__card" data-delay="0">
+                                <div class="whytribean__icon">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+                                <h3 class="whytribean__card-title">
+                                    Farm-to-Cup
+                                </h3>
+                                <p class="whytribean__card-text">
+                                    Our beans are sourced directly from highland
+                                    farms in Đà Lạt and the Central Highlands —
+                                    no middlemen, just pure flavor.
+                                </p>
+                            </div>
+
+                            <div class="whytribean__card" data-delay="150">
+                                <div class="whytribean__icon">
+                                    <i
+                                        class="fa-solid fa-fire-flame-curved"
+                                    ></i>
+                                </div>
+                                <h3 class="whytribean__card-title">
+                                    Roasted Fresh
+                                </h3>
+                                <p class="whytribean__card-text">
+                                    Every batch is roasted in-house weekly to
+                                    lock in aroma and bring out the natural
+                                    sweetness of each origin.
+                                </p>
+                            </div>
+
+                            <div class="whytribean__card" data-delay="300">
+                                <div class="whytribean__icon">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                </div>
+                                <h3 class="whytribean__card-title">
+                                    Crafted With Care
+                                </h3>
+                                <p class="whytribean__card-text">
+                                    From the first pour to the last sip, every
+                                    cup is made with intention — because you
+                                    deserve more than just caffeine.
+                                </p>
+                            </div>
+
+                            <div class="whytribean__card" data-delay="450">
+                                <div class="whytribean__icon">
+                                    <i class="fa-solid fa-leaf"></i>
+                                </div>
+                                <h3 class="whytribean__card-title">
+                                    Eco Packaging
+                                </h3>
+                                <p class="whytribean__card-text">
+                                    We use 100% compostable cups and bags
+                                    because good coffee shouldn't cost the
+                                    earth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: CTA BANNER -->
+                <section class="cta-banner">
+                    <div class="cta-banner__bg-dots"></div>
+                    <div class="cta-banner__wrapper">
+                        <div class="cta-banner__text">
+                            <span class="cta-banner__tag">Limited Time</span>
+                            <h2 class="cta-banner__title">
+                                Start your morning <br />
+                                <em>the right way.</em>
+                            </h2>
+                            <p class="cta-banner__desc">
+                                Order before 9 AM and get free delivery — plus a
+                                mystery pastry with every coffee order this
+                                week.
+                            </p>
+                        </div>
+                        <div class="cta-banner__action">
+                            <a
+                                href="#"
+                                class="cta-banner__btn cta-banner__btn--primary"
+                            >
+                                Order Now
+                            </a>
+                            <a
+                                href="#"
+                                class="cta-banner__btn cta-banner__btn--ghost"
+                            >
+                                View Full Menu
+                            </a>
+                        </div>
+                        <div class="cta-banner__deco">☕</div>
+                    </div>
+                </section>
+            </main>
+
+            <footer id="footer" class="footer"></footer>
+        </div>
+
+        <script src="./js/layouts/partials.js"></script>
+        <script type="module" src="./js/pages/home.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> -->
+    </body>
+</html>

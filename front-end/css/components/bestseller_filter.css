@@ -1,0 +1,116 @@
+/* ---- Filter container ---- */
+.bestseller__filter {
+  margin-bottom: 3.2rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+/* ---- Header row ---- */
+.bestseller__filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.bestseller__filter-label {
+  font-size: var(--font-sm); /* 1.4rem */
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.bestseller__filter-count {
+  font-size: var(--font-sm);
+  color: #888;
+}
+
+/* ---- Pills row ---- */
+.bestseller__pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bestseller__buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* ---- Individual pill ---- */
+.bestseller__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10rem;
+  border: 1.5px solid var(--color-border);
+  background: #fff;
+  color: #555;
+  font-size: 1.4rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+.bestseller__pill:hover {
+  border-color: #aaa;
+  color: #222;
+  transform: translateY(-2px);
+}
+
+.bestseller__pill.active {
+  background: var(--color-button); /* #273c75 navy */
+  border-color: var(--color-button);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ---- Colored dot ---- */
+.bestseller__pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ---- Item count badge (shown only when active) ---- */
+.bestseller__pill-count {
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.22);
+  padding: 0.1rem 0.5rem;
+  border-radius: 10rem;
+  display: none;
+}
+
+.bestseller__pill.active .bestseller__pill-count {
+  display: inline;
+}
+
+.bestseller__pills .bestseller__show-more {
+  display: block;
+  text-decoration: none;
+  padding: 3px 0;
+  color: #555;
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.bestseller__pills .bestseller__show-more:hover {
+  border-bottom: 1px solid #555;
+  font-weight: 600;
+}
+
+.bestseller__pills .bestseller__show-more i {
+  margin-left: 0.6rem;
+}

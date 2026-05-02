@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Menu — TriBean Coffee</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="../css/base/variables.css" />
+        <link rel="stylesheet" href="../css/base/reset.css" />
+        <link rel="stylesheet" href="../css/base/global.css" />
+        <link rel="stylesheet" href="../css/components/card.css" />
+        <link rel="stylesheet" href="../css/layouts/header.css" />
+        <link rel="stylesheet" href="../css/layouts/footer.css" />
+        <link rel="stylesheet" href="../css/pages/menu.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header id="header" class="header"></header>
+
+            <!-- ===== HERO ===== -->
+            <section class="menu-hero">
+                <div class="menu-hero__content">
+                    <p class="menu-hero__eyebrow">Explore our drinks</p>
+                    <h1 class="menu-hero__title">Our Menu</h1>
+                    <p class="menu-hero__sub">
+                        Sourced from highland farms, roasted fresh every week —
+                        find your perfect cup.
+                    </p>
+                </div>
+                <div class="menu-hero__blob menu-hero__blob--1"></div>
+                <div class="menu-hero__blob menu-hero__blob--2"></div>
+                <div class="menu-hero__deco">☕</div>
+            </section>
+
+            <!-- ===== MAIN ===== -->
+            <main class="menu-main">
+                <div class="menu-container">
+                    <!-- SIDEBAR -->
+                    <aside class="menu-sidebar">
+                        <div class="menu-sidebar__sticky">
+                            <!-- Search -->
+                            <div class="menu-search">
+                                <i
+                                    class="fa-solid fa-magnifying-glass menu-search__icon"
+                                ></i>
+                                <input
+                                    class="menu-search__input"
+                                    type="text"
+                                    id="menu-search-input"
+                                    placeholder="Search drinks..."
+                                />
+                                <button
+                                    class="menu-search__clear is-hidden"
+                                    id="search-clear"
+                                >
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+
+                            <!-- Categories -->
+                            <div class="menu-sidebar__section">
+                                <p class="menu-sidebar__label">Category</p>
+                                <ul class="menu-cat-list" id="cat-list">
+                                    <li
+                                        class="menu-cat-item active"
+                                        data-cat="all"
+                                    >
+                                        <span
+                                            class="menu-cat-dot"
+                                            style="
+                                                background: var(
+                                                    --color-primary
+                                                );
+                                            "
+                                        ></span>
+                                        All drinks
+                                        <span
+                                            class="menu-cat-count"
+                                            id="count-all"
+                                            >0</span
+                                        >
+                                    </li>
+                                    <li class="menu-cat-item" data-cat="coffee">
+                                        <span
+                                            class="menu-cat-dot"
+                                            style="background: #c0392b"
+                                        ></span>
+                                        Coffee
+                                        <span
+                                            class="menu-cat-count"
+                                            id="count-coffee"
+                                            >0</span
+                                        >
+                                    </li>
+                                    <li class="menu-cat-item" data-cat="tea">
+                                        <span
+                                            class="menu-cat-dot"
+                                            style="background: #27ae60"
+                                        ></span>
+                                        Tea
+                                        <span
+                                            class="menu-cat-count"
+                                            id="count-tea"
+                                            >0</span
+                                        >
+                                    </li>
+                                    <li class="menu-cat-item" data-cat="matcha">
+                                        <span
+                                            class="menu-cat-dot"
+                                            style="background: #8bc34a"
+                                        ></span>
+                                        Matcha
+                                        <span
+                                            class="menu-cat-count"
+                                            id="count-matcha"
+                                            >0</span
+                                        >
+                                    </li>
+                                    <li class="menu-cat-item" data-cat="latte">
+                                        <span
+                                            class="menu-cat-dot"
+                                            style="background: #ccae88"
+                                        ></span>
+                                        Latte
+                                        <span
+                                            class="menu-cat-count"
+                                            id="count-latte"
+                                            >0</span
+                                        >
+                                    </li>
+                                    <li class="menu-cat-item" data-cat="juice">
+                                        <span
+                                            class="menu-cat-dot"
+                                            style="background: #ff7f00"
+                                        ></span>
+                                        Juice
+                                        <span
+                                            class="menu-cat-count"
+                                            id="count-juice"
+                                            >0</span
+                                        >
+                                    </li>
+                                    <li
+                                        class="menu-cat-item"
+                                        data-cat="special"
+                                    >
+                                        <span
+                                            class="menu-cat-dot"
+                                            style="
+                                                background: var(--color-price);
+                                            "
+                                        ></span>
+                                        Specials
+                                        <span
+                                            class="menu-cat-count"
+                                            id="count-special"
+                                            >0</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Price range -->
+                            <div class="menu-sidebar__section">
+                                <p class="menu-sidebar__label">Price range</p>
+                                <div class="menu-price-range">
+                                    <div class="menu-price-range__labels">
+                                        <span>$0</span>
+                                        <span id="price-label"
+                                            >Up to $<span id="price-val"
+                                                >10</span
+                                            ></span
+                                        >
+                                    </div>
+                                    <input
+                                        type="range"
+                                        class="menu-price-slider"
+                                        id="price-slider"
+                                        min="1"
+                                        max="10"
+                                        step="0.1"
+                                        value="10"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Sort -->
+                            <div class="menu-sidebar__section">
+                                <p class="menu-sidebar__label">Sort by</p>
+                                <div class="menu-sort-group" id="sort-group">
+                                    <button
+                                        class="menu-sort-btn active"
+                                        data-sort="default"
+                                    >
+                                        Default
+                                    </button>
+                                    <button
+                                        class="menu-sort-btn"
+                                        data-sort="price-asc"
+                                    >
+                                        Price ↑
+                                    </button>
+                                    <button
+                                        class="menu-sort-btn"
+                                        data-sort="price-desc"
+                                    >
+                                        Price ↓
+                                    </button>
+                                    <button
+                                        class="menu-sort-btn"
+                                        data-sort="rating"
+                                    >
+                                        Top rated
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Reset -->
+                            <button class="menu-reset-btn" id="reset-filters">
+                                <i class="fa-solid fa-rotate-left"></i> Reset
+                                filters
+                            </button>
+                        </div>
+                    </aside>
+
+                    <!-- PRODUCT GRID -->
+                    <div class="menu-content">
+                        <!-- Toolbar -->
+                        <div class="menu-toolbar">
+                            <p class="menu-toolbar__count" id="toolbar-count">
+                                Showing all drinks
+                            </p>
+                            <div class="menu-toolbar__right">
+                                <!-- Mobile filter toggle -->
+                                <button
+                                    class="menu-filter-toggle"
+                                    id="filter-toggle"
+                                >
+                                    <i class="fa-solid fa-sliders"></i> Filter
+                                </button>
+                                <!-- View toggle -->
+                                <div class="menu-view-toggle">
+                                    <button
+                                        class="menu-view-btn active"
+                                        id="view-grid"
+                                        aria-label="Grid view"
+                                    >
+                                        <i class="fa-solid fa-grip"></i>
+                                    </button>
+                                    <button
+                                        class="menu-view-btn"
+                                        id="view-list"
+                                        aria-label="List view"
+                                    >
+                                        <i class="fa-solid fa-list"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grid -->
+                        <div class="menu-grid" id="menu-grid"></div>
+
+                        <!-- Empty state -->
+                        <div class="menu-empty" id="menu-empty" hidden>
+                            <div class="menu-empty__icon">☕</div>
+                            <p class="menu-empty__title">No drinks found</p>
+                            <p class="menu-empty__sub">
+                                Try adjusting your filters or search term.
+                            </p>
+                            <button class="menu-empty__btn" id="empty-reset">
+                                Reset filters
+                            </button>
+                        </div>
+
+                        <!-- Show more -->
+                        <div class="menu-showmore">
+                            <button class="menu-showmore__button hide-btn">
+                                Show more
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Mobile filter drawer overlay -->
+            <div class="menu-overlay" id="menu-overlay"></div>
+
+            <footer id="footer" class="footer"></footer>
+        </div>
+
+        <script src="../js/layouts/partials.js"></script>
+        <script type="module" src="../js/pages/menu.js"></script>
+    </body>
+</html>

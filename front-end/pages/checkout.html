@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Checkout — TriBean Coffee</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="../../css/base/variables.css" />
+        <link rel="stylesheet" href="../../css/base/reset.css" />
+        <link rel="stylesheet" href="../../css/base/global.css" />
+        <link rel="stylesheet" href="../../css/layouts/header.css" />
+        <link rel="stylesheet" href="../../css/layouts/footer.css" />
+        <link rel="stylesheet" href="../../css/pages/checkout.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header id="header" class="header header--static"></header>
+
+            <!-- BREADCRUMB -->
+            <div class="checkout-breadcrumb">
+                <div class="checkout-bc__inner">
+                    <a href="../index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="../pages/cart.html">Cart</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Checkout</span>
+                </div>
+            </div>
+
+            <!-- STEPS -->
+            <div class="checkout-steps">
+                <div class="checkout-steps__inner">
+                    <div class="checkout-step active" id="step-indicator-1">
+                        <div class="checkout-step__circle">1</div>
+                        <span>Delivery</span>
+                    </div>
+                    <div class="checkout-step__line"></div>
+                    <div class="checkout-step" id="step-indicator-2">
+                        <div class="checkout-step__circle">2</div>
+                        <span>Payment</span>
+                    </div>
+                    <div class="checkout-step__line"></div>
+                    <div class="checkout-step" id="step-indicator-3">
+                        <div class="checkout-step__circle">3</div>
+                        <span>Confirm</span>
+                    </div>
+                </div>
+            </div>
+
+            <main class="checkout-main">
+                <div class="checkout-container">
+                    <div class="checkout-layout">
+                        <!-- LEFT: Form Steps -->
+                        <div class="checkout-form-col">
+                            <!-- STEP 1: Delivery Info -->
+                            <div class="checkout-panel active" id="step-1">
+                                <h2 class="checkout-panel__title">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Delivery Information
+                                </h2>
+                                <div class="checkout-form">
+                                    <div class="form-group">
+                                        <label class="form-label"
+                                            >Full Name
+                                            <span class="required"
+                                                >*</span
+                                            ></label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-input"
+                                            id="receiver-name"
+                                            placeholder="Nguyen Van A"
+                                        />
+                                        <span
+                                            class="form-error"
+                                            id="error-name"
+                                        ></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"
+                                            >Phone Number
+                                            <span class="required"
+                                                >*</span
+                                            ></label
+                                        >
+                                        <input
+                                            type="tel"
+                                            class="form-input"
+                                            id="receiver-phone"
+                                            placeholder="0912345678"
+                                        />
+                                        <span
+                                            class="form-error"
+                                            id="error-phone"
+                                        ></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"
+                                            >Delivery Address
+                                            <span class="required"
+                                                >*</span
+                                            ></label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-input"
+                                            id="receiver-address"
+                                            placeholder="123 Nguyen Trai, Ha Noi"
+                                        />
+                                        <span
+                                            class="form-error"
+                                            id="error-address"
+                                        ></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label"
+                                            >Order Note (optional)</label
+                                        >
+                                        <textarea
+                                            class="form-input form-textarea"
+                                            id="order-note"
+                                            placeholder="E.g. Leave at the door, no doorbell..."
+                                        ></textarea>
+                                    </div>
+                                    <button
+                                        class="checkout-btn checkout-btn--primary"
+                                        id="btn-to-payment"
+                                    >
+                                        Continue to Payment
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 2: Payment -->
+                            <div class="checkout-panel" id="step-2">
+                                <h2 class="checkout-panel__title">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                    Payment Method
+                                </h2>
+                                <div class="payment-methods">
+                                    <label
+                                        class="payment-option active"
+                                        id="pay-cod"
+                                    >
+                                        <input
+                                            type="radio"
+                                            name="payment"
+                                            value="COD"
+                                            checked
+                                        />
+                                        <div class="payment-option__icon">
+                                            <i
+                                                class="fa-solid fa-money-bill-wave"
+                                            ></i>
+                                        </div>
+                                        <div class="payment-option__info">
+                                            <p class="payment-option__name">
+                                                Cash on Delivery
+                                            </p>
+                                            <p class="payment-option__desc">
+                                                Pay when you receive your order
+                                            </p>
+                                        </div>
+                                        <div class="payment-option__check">
+                                            <i
+                                                class="fa-solid fa-circle-check"
+                                            ></i>
+                                        </div>
+                                    </label>
+
+                                    <label
+                                        class="payment-option"
+                                        id="pay-online"
+                                    >
+                                        <input
+                                            type="radio"
+                                            name="payment"
+                                            value="Online"
+                                        />
+                                        <div
+                                            class="payment-option__icon payment-option__icon--online"
+                                        >
+                                            <i
+                                                class="fa-solid fa-mobile-screen"
+                                            ></i>
+                                        </div>
+                                        <div class="payment-option__info">
+                                            <p class="payment-option__name">
+                                                Online Payment
+                                            </p>
+                                            <p class="payment-option__desc">
+                                                VNPay, MoMo, ZaloPay
+                                            </p>
+                                        </div>
+                                        <div class="payment-option__check">
+                                            <i
+                                                class="fa-solid fa-circle-check"
+                                            ></i>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="checkout-nav">
+                                    <button
+                                        class="checkout-btn checkout-btn--ghost"
+                                        id="btn-back-to-delivery"
+                                    >
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Back
+                                    </button>
+                                    <button
+                                        class="checkout-btn checkout-btn--primary"
+                                        id="btn-to-confirm"
+                                    >
+                                        Review Order
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3: Confirm -->
+                            <div class="checkout-panel" id="step-3">
+                                <h2 class="checkout-panel__title">
+                                    <i class="fa-solid fa-clipboard-check"></i>
+                                    Review Your Order
+                                </h2>
+
+                                <!-- Delivery summary -->
+                                <div class="confirm-section">
+                                    <div class="confirm-section__header">
+                                        <span>Delivery Info</span>
+                                        <button
+                                            class="confirm-edit-btn"
+                                            data-goto="1"
+                                        >
+                                            Edit
+                                        </button>
+                                    </div>
+                                    <div class="confirm-info">
+                                        <p id="confirm-name"></p>
+                                        <p id="confirm-phone"></p>
+                                        <p id="confirm-address"></p>
+                                    </div>
+                                </div>
+
+                                <!-- Payment summary -->
+                                <div class="confirm-section">
+                                    <div class="confirm-section__header">
+                                        <span>Payment</span>
+                                        <button
+                                            class="confirm-edit-btn"
+                                            data-goto="2"
+                                        >
+                                            Edit
+                                        </button>
+                                    </div>
+                                    <div class="confirm-info">
+                                        <p id="confirm-payment"></p>
+                                    </div>
+                                </div>
+
+                                <!-- Items summary -->
+                                <div class="confirm-section">
+                                    <div class="confirm-section__header">
+                                        <span>Items</span>
+                                    </div>
+                                    <div
+                                        class="confirm-items"
+                                        id="confirm-items"
+                                    >
+                                        <!-- Rendered by JS -->
+                                    </div>
+                                </div>
+
+                                <div class="checkout-nav">
+                                    <button
+                                        class="checkout-btn checkout-btn--ghost"
+                                        id="btn-back-to-payment"
+                                    >
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Back
+                                    </button>
+                                    <button
+                                        class="checkout-btn checkout-btn--place"
+                                        id="btn-place-order"
+                                    >
+                                        <i class="fa-solid fa-bag-shopping"></i>
+                                        Place Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Order Summary -->
+                        <div class="checkout-summary-col">
+                            <div class="checkout-summary">
+                                <h2 class="checkout-summary__title">
+                                    Order Summary
+                                </h2>
+
+                                <!-- Loading -->
+                                <div
+                                    class="checkout-summary__loading"
+                                    id="summary-loading"
+                                >
+                                    <i
+                                        class="fa-solid fa-circle-notch fa-spin"
+                                    ></i>
+                                    Loading cart...
+                                </div>
+
+                                <!-- Items -->
+                                <div
+                                    class="checkout-summary__items"
+                                    id="summary-items"
+                                ></div>
+
+                                <div class="checkout-summary__divider"></div>
+
+                                <div class="checkout-summary__rows">
+                                    <div class="checkout-summary__row">
+                                        <span>Subtotal</span>
+                                        <span id="summary-subtotal">$0.00</span>
+                                    </div>
+                                    <div class="checkout-summary__row">
+                                        <span>Delivery</span>
+                                        <span id="summary-delivery">$1.50</span>
+                                    </div>
+                                </div>
+
+                                <div class="checkout-summary__divider"></div>
+
+                                <div class="checkout-summary__total">
+                                    <span>Total</span>
+                                    <span id="summary-total">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer id="footer" class="footer"></footer>
+        </div>
+
+        <!-- SUCCESS MODAL -->
+        <div class="order-modal" id="order-modal">
+            <div class="order-modal__backdrop"></div>
+            <div class="order-modal__box">
+                <div class="order-modal__icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h2 class="order-modal__title">Order Placed!</h2>
+                <p class="order-modal__sub">
+                    Thank you for your order. We'll prepare it right away
+                </p>
+                <div class="order-modal__info" id="modal-order-info"></div>
+                <div class="order-modal__actions">
+                    <a
+                        href="../pages/orders.html"
+                        class="checkout-btn checkout-btn--primary"
+                    >
+                        View My Orders
+                    </a>
+                    <a
+                        href="../pages/menu.html"
+                        class="checkout-btn checkout-btn--ghost"
+                    >
+                        Continue Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../js/layouts/partials.js"></script>
+        <script type="module" src="../../js/pages/checkout.js"></script>
+    </body>
+</html>

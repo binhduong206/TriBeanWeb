@@ -1,0 +1,101 @@
+<div class="header__container">
+    <div class="header__left">
+        <div class="header__logo">
+            <a href="../../index.html">
+                <img src="../../assets/logo/logo.png" width="80" height="50" />
+            </a>
+        </div>
+        <nav class="nav">
+            <div class="header__nav">
+                <a href="../index.html">Home</a>
+                <a href="../pages/menu.html">Menu</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="header__right">
+        <div class="header__actions">
+            <div class="header__cart">
+                <a href="/pages/cart.html" id="header__cart-link"
+                    ><i class="fa-solid fa-cart-shopping"></i
+                ></a>
+                <span class="header__cart-count">0</span>
+            </div>
+
+            <!-- GUEST: hiện khi chưa đăng nhập -->
+            <div class="header__auth" id="header-guest">
+                <a
+                    class="header__btn header__btn--signin"
+                    href="../../pages/auth/login.html"
+                    >Sign In</a
+                >
+                <a
+                    class="header__btn header__btn--signup"
+                    href="../../pages/auth/register.html"
+                    >Sign Up</a
+                >
+            </div>
+
+            <!-- USER: hiện khi đã đăng nhập — JS sẽ điền thông tin -->
+            <div class="header__user" id="header-user" style="display: none">
+                <div class="header__avatar" id="header-avatar-btn">
+                    <div
+                        class="header__avatar-circle"
+                        id="header-avatar-initials"
+                    >
+                        <!-- JS inject: <img> nếu có avatar, hoặc initials text -->
+                    </div>
+                    <span
+                        class="header__user-name"
+                        id="header-user-name"
+                    ></span>
+                    <i
+                        class="fa-solid fa-chevron-down header__avatar-caret"
+                    ></i>
+                </div>
+
+                <div class="header__dropdown" id="header-dropdown">
+                    <div class="header__dropdown-info">
+                        <div
+                            class="header__dropdown-avatar"
+                            id="dropdown-avatar-initials"
+                        >
+                            <!-- JS inject: <img> nếu có avatar, hoặc initials text -->
+                        </div>
+                        <div>
+                            <p
+                                class="header__dropdown-name"
+                                id="dropdown-name"
+                            ></p>
+                            <p
+                                class="header__dropdown-email"
+                                id="dropdown-email"
+                            ></p>
+                        </div>
+                    </div>
+                    <div class="header__dropdown-divider"></div>
+                    <a href="#" class="header__dropdown-item">
+                        <i class="fa-regular fa-user"></i> My Profile
+                    </a>
+                    <a
+                        href="../pages/orders.html"
+                        class="header__dropdown-item"
+                    >
+                        <i class="fa-solid fa-bag-shopping"></i> My Orders
+                    </a>
+                    <a href="#" class="header__dropdown-item">
+                        <i class="fa-regular fa-heart"></i> Favourites
+                    </a>
+                    <div class="header__dropdown-divider"></div>
+                    <button
+                        class="header__dropdown-item header__dropdown-logout"
+                        id="header-logout"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

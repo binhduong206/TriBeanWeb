@@ -1,0 +1,53 @@
+@* Views/Admin/Layouts/_AdminLayout.cshtml *@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@(ViewData["Title"] ?? "Admin") — TriBean</title>
+
+    <script>
+        let theme = localStorage.getItem('adminTheme');
+
+        // 2. Nếu chưa từng bấm, tự động check xem Window/Mac của sếp đang là Dark hay Light
+        if (!theme) {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            theme = prefersDark ? 'dark' : 'light';
+        }
+
+        // 3. Áp dụng ngay lập tức
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <link rel="stylesheet" href="~/Admin/css/base.css" />
+    <link rel="stylesheet" href="~/Admin/css/layout.css" />
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+<div class="admin-shell">
+
+    @await Html.PartialAsync("~/Views/Admin/Partials/_Sidebar.cshtml")
+
+    <div class="main-wrap" id="mainWrap">
+
+        @await Html.PartialAsync("~/Views/Admin/Partials/_Header.cshtml")
+
+        <main class="main-content">
+            @RenderBody()
+        </main>
+
+        @await Html.PartialAsync("~/Views/Admin/Partials/_Footer.cshtml")
+
+    </div>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="~/Admin/js/index.js" asp-append-version="true"></script>
+
+@RenderSection("Scripts", required: false)
+
+</body>
+</html>

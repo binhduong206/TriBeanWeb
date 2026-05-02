@@ -1,0 +1,476 @@
+/* =============================================
+   TRIBEAN ADMIN — dashboard.css
+   ============================================= */
+
+/* ── Stat Cards ────────────────────────────── */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.stat-card.accent-gold::before {
+    background: var(--sb-accent);
+}
+
+.stat-card.accent-green::before {
+    background: var(--green);
+}
+
+.stat-card.accent-blue::before {
+    background: var(--blue);
+}
+
+.stat-card.accent-purple::before {
+    background: var(--purple);
+}
+
+.stat-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-icon.gold {
+    background: var(--yellow-soft);
+    color: var(--sb-accent);
+}
+
+.stat-icon.green {
+    background: var(--green-soft);
+    color: var(--green);
+}
+
+.stat-icon.blue {
+    background: var(--blue-soft);
+    color: var(--blue);
+}
+
+.stat-icon.purple {
+    background: var(--purple-soft);
+    color: var(--purple);
+}
+
+.stat-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.stat-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 99px;
+}
+
+.stat-change.up {
+    background: var(--green-soft);
+    color: var(--green);
+}
+
+.stat-change.down {
+    background: var(--red-soft);
+    color: var(--red);
+}
+
+.stat-change svg {
+    width: 11px;
+    height: 11px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* ── Charts Area ───────────────────────────── */
+.charts-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.chart-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-card-header {
+    margin-bottom: 20px;
+}
+
+.chart-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.chart-card-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.chart-canvas-wrap {
+    position: relative;
+    height: 260px;
+    width: 100%;
+}
+
+.donut-chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 260px;
+}
+
+.donut-canvas-wrap {
+    position: relative;
+    height: 180px;
+    width: 50%;
+}
+
+.donut-legend {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.dot-delivered {
+    background: var(--green);
+}
+
+.dot-shipping {
+    background: var(--blue);
+}
+
+.dot-confirmed {
+    background: var(--purple);
+}
+
+.dot-pending {
+    background: var(--yellow);
+}
+
+.dot-cancelled {
+    background: var(--red);
+}
+
+.legend-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    flex: 1;
+}
+
+.legend-val {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ── Bottom Row (Bảng dữ liệu - CSS Grid) ──── */
+.bottom-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 16px;
+    padding-bottom: 8px;
+}
+
+/* Dòng Header & Row chung */
+.list-header-row {
+    padding: 16px 20px 8px 20px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.recent-order-row {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--card-border);
+    transition: background 0.2s;
+}
+
+.top-product-row {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--card-border);
+    transition: background 0.2s;
+}
+
+.recent-order-row:hover,
+.top-product-row:hover {
+    background: var(--sb-accent-soft);
+}
+
+.recent-order-row:last-child,
+.top-product-row:last-child {
+    border-bottom: none;
+}
+
+/* Utilities cho Text bảng */
+.header-text {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.empty-state-msg {
+    padding: 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* LƯỚI BẢNG RECENT ORDERS (5 Cột): [ID] [Customer] [Date] [Status] [Amount] */
+.grid-recent-orders {
+    display: grid;
+    grid-template-columns: 80px 1.5fr 100px 85px 90px;
+    align-items: center;
+    gap: 12px;
+}
+
+/* LƯỚI BẢNG TOP PRODUCTS (4 Cột): [#] [Thumb] [Product] [Sales] */
+.grid-top-products {
+    display: grid;
+    grid-template-columns: 24px 36px 1fr 80px;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Chi tiết cột Customer */
+.customer-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.customer-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--blue-soft);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.customer-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.customer-name {
+    font-size: 13px;
+    color: var(--text-primary);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Chi tiết các cột khác */
+.order-id-cell {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.order-date-cell {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.order-amount {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.product-rank {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.product-thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.thumb-spacer {
+    width: 36px;
+    flex-shrink: 0;
+}
+
+.thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rank-bg-1 {
+    background: var(--yellow-soft);
+}
+
+.rank-bg-2 {
+    background: var(--blue-soft);
+}
+
+.rank-bg-3 {
+    background: var(--green-soft);
+}
+
+.rank-bg-4 {
+    background: var(--purple-soft);
+}
+
+.rank-bg-5 {
+    background: var(--red-soft);
+}
+
+.product-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.product-info-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-info-cat {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.product-sales {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* LƯỚI BẢNG TOP SPENDERS (4 Cột): [#] [Customer] [Orders] [Spent] */
+.grid-top-spenders {
+    display: grid;
+    grid-template-columns: 24px 1fr 80px 100px;
+    align-items: center;
+    gap: 16px;
+}
+
+/* LƯỚI BẢNG RECENT REGISTRATIONS (3 Cột): [Customer] [Email] [Date] */
+.grid-recent-users {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 100px;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Utilities cho Bảng User */
+.user-email-cell { font-size: 13px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.user-date-cell { font-size: 12px; color: var(--text-secondary); text-align: right; }
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 1280px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .charts-row,
+    .bottom-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

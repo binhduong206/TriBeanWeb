@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create Account — TriBean</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="../../css/base/variables.css" />
+        <link rel="stylesheet" href="../../css/base/reset.css" />
+        <link rel="stylesheet" href="../../css/base/global.css" />
+        <link rel="stylesheet" href="../../css/pages/auth/auth.css" />
+    </head>
+    <body class="auth-body">
+        <div class="auth-split">
+            <!-- ===== LEFT PANEL — Branding ===== -->
+            <div class="auth-panel auth-panel--brand">
+                <a href="../../index.html" class="auth-logo">
+                    <img
+                        src="../../assets/logo/logo.png"
+                        alt=""
+                        width="80"
+                        height="50"
+                /></a>
+
+                <div class="auth-brand__content">
+                    <p class="auth-brand__eyebrow">Join the community</p>
+                    <h1 class="auth-brand__headline">
+                        Start your <br /><em>first cup free.</em>
+                    </h1>
+                    <p class="auth-brand__sub">
+                        Create a TriBean account and get a free drink on your
+                        first order — no strings attached.
+                    </p>
+                </div>
+
+                <div class="auth-brand__perks">
+                    <div class="auth-perk">
+                        <div class="auth-perk__icon">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <span>Free drink on your first order</span>
+                    </div>
+                    <div class="auth-perk">
+                        <div class="auth-perk__icon">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <span>Faster checkout every time</span>
+                    </div>
+                    <div class="auth-perk">
+                        <div class="auth-perk__icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span>Earn 1 point per $1 spent</span>
+                    </div>
+                </div>
+
+                <div class="auth-blob auth-blob--1"></div>
+                <div class="auth-blob auth-blob--2"></div>
+                <div class="auth-deco-text">☕</div>
+            </div>
+
+            <!-- ===== RIGHT PANEL — Form ===== -->
+            <div class="auth-panel auth-panel--form">
+                <div class="auth-form-wrap">
+                    <div class="auth-form-header">
+                        <h2 class="auth-form-title">Create account</h2>
+                        <p class="auth-form-sub">
+                            Already have an account?
+                            <a href="./login.html">Sign in</a>
+                        </p>
+                    </div>
+
+                    <!-- Social login -->
+                    <div class="auth-social">
+                        <button class="auth-social-btn">
+                            <i class="fa-brands fa-google"></i>
+                            Continue with Google
+                        </button>
+                        <button class="auth-social-btn">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            Continue with Facebook
+                        </button>
+                    </div>
+
+                    <div class="auth-divider">
+                        <span>or register with email</span>
+                    </div>
+
+                    <!-- Form -->
+                    <form class="auth-form" id="register-form" novalidate>
+                        <div class="auth-row">
+                            <div class="auth-field" id="field-firstname">
+                                <label class="auth-label" for="firstname"
+                                    >First name</label
+                                >
+                                <div class="auth-input-wrap">
+                                    <i
+                                        class="fa-regular fa-user auth-input-icon"
+                                    ></i>
+                                    <input
+                                        class="auth-input"
+                                        type="text"
+                                        id="firstname"
+                                        name="firstname"
+                                        placeholder="Nguyen"
+                                        autocomplete="given-name"
+                                    />
+                                </div>
+                                <p
+                                    class="auth-field-error"
+                                    id="error-firstname"
+                                ></p>
+                            </div>
+
+                            <div class="auth-field" id="field-lastname">
+                                <label class="auth-label" for="lastname"
+                                    >Last name</label
+                                >
+                                <div class="auth-input-wrap">
+                                    <i
+                                        class="fa-regular fa-user auth-input-icon"
+                                    ></i>
+                                    <input
+                                        class="auth-input"
+                                        type="text"
+                                        id="lastname"
+                                        name="lastname"
+                                        placeholder="Van A"
+                                        autocomplete="family-name"
+                                    />
+                                </div>
+                                <p
+                                    class="auth-field-error"
+                                    id="error-lastname"
+                                ></p>
+                            </div>
+                        </div>
+
+                        <div class="auth-field" id="field-reg-email">
+                            <label class="auth-label" for="reg-email"
+                                >Email address</label
+                            >
+                            <div class="auth-input-wrap">
+                                <i
+                                    class="fa-regular fa-envelope auth-input-icon"
+                                ></i>
+                                <input
+                                    class="auth-input"
+                                    type="email"
+                                    id="reg-email"
+                                    name="email"
+                                    placeholder="you@email.com"
+                                    autocomplete="email"
+                                />
+                            </div>
+                            <p
+                                class="auth-field-error"
+                                id="error-reg-email"
+                            ></p>
+                        </div>
+
+                        <div class="auth-field" id="field-reg-password">
+                            <label class="auth-label" for="reg-password"
+                                >Password</label
+                            >
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-lock auth-input-icon"></i>
+                                <input
+                                    class="auth-input"
+                                    type="password"
+                                    id="reg-password"
+                                    name="password"
+                                    placeholder="At least 8 characters"
+                                    autocomplete="new-password"
+                                />
+                                <button
+                                    type="button"
+                                    class="auth-toggle-pw"
+                                    tabindex="-1"
+                                    aria-label="Show password"
+                                >
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <p
+                                class="auth-field-error"
+                                id="error-reg-password"
+                            ></p>
+                            <!-- Strength bar -->
+                            <div
+                                class="auth-strength"
+                                id="strength-wrap"
+                                hidden
+                            >
+                                <div class="auth-strength__bar">
+                                    <div
+                                        class="auth-strength__fill"
+                                        id="strength-fill"
+                                    ></div>
+                                </div>
+                                <span
+                                    class="auth-strength__label"
+                                    id="strength-label"
+                                ></span>
+                            </div>
+                        </div>
+
+                        <div class="auth-field" id="field-confirm">
+                            <label class="auth-label" for="confirm"
+                                >Confirm password</label
+                            >
+                            <div class="auth-input-wrap">
+                                <i class="fa-solid fa-lock auth-input-icon"></i>
+                                <input
+                                    class="auth-input"
+                                    type="password"
+                                    id="confirm"
+                                    name="confirm"
+                                    placeholder="••••••••"
+                                    autocomplete="new-password"
+                                />
+                                <button
+                                    type="button"
+                                    class="auth-toggle-pw"
+                                    tabindex="-1"
+                                    aria-label="Show password"
+                                >
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <p class="auth-field-error" id="error-confirm"></p>
+                        </div>
+
+                        <div class="auth-remember">
+                            <label class="auth-checkbox">
+                                <input type="checkbox" id="agree" required />
+                                <span class="auth-checkbox__box"></span>
+                                I agree to the
+                                <a href="#">Terms of Service</a> and
+                                <a href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <div class="auth-remember">
+                            <label class="auth-checkbox">
+                                <input type="checkbox" id="newsletter" />
+                                <span class="auth-checkbox__box"></span>
+                                Send me offers, new drinks & brewing tips
+                            </label>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="auth-submit"
+                            id="register-submit"
+                        >
+                            <span class="auth-submit__text"
+                                >Create account</span
+                            >
+                            <span class="auth-submit__spinner" hidden>
+                                <i class="fa-solid fa-circle-notch fa-spin"></i>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+
+                <a href="/" class="auth-back-mobile">
+                    <i class="fa-solid fa-arrow-left"></i> Back to TriBean
+                </a>
+            </div>
+        </div>
+
+        <script src="../../js/pages/auth/auth.js"></script>
+        <script src="../../js/pages/auth/register.js"></script>
+    </body>
+</html>

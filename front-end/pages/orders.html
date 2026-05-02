@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Orders — TriBean Coffee</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="../../css/base/variables.css" />
+        <link rel="stylesheet" href="../../css/base/reset.css" />
+        <link rel="stylesheet" href="../../css/base/global.css" />
+        <link rel="stylesheet" href="../../css/layouts/header.css" />
+        <link rel="stylesheet" href="../../css/layouts/footer.css" />
+        <link rel="stylesheet" href="../../css/pages/orders.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header id="header" class="header header--static"></header>
+
+            <!-- BREADCRUMB -->
+            <div class="orders-breadcrumb">
+                <div class="orders-bc__inner">
+                    <a href="../../index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>My Orders</span>
+                </div>
+            </div>
+
+            <main class="orders-main">
+                <div class="orders-container">
+                    <div class="orders-header">
+                        <h1 class="orders-header__title">My Orders</h1>
+                        <p class="orders-header__sub">
+                            Track and manage your orders
+                        </p>
+                    </div>
+
+                    <!-- FILTER TABS -->
+                    <div class="orders-filter">
+                        <button
+                            class="orders-filter__btn active"
+                            data-status="All"
+                        >
+                            All
+                        </button>
+                        <button
+                            class="orders-filter__btn"
+                            data-status="Pending"
+                        >
+                            <span class="status-dot status-dot--pending"></span>
+                            Pending
+                        </button>
+                        <button
+                            class="orders-filter__btn"
+                            data-status="Confirmed"
+                        >
+                            <span
+                                class="status-dot status-dot--confirmed"
+                            ></span>
+                            Confirmed
+                        </button>
+                        <button
+                            class="orders-filter__btn"
+                            data-status="Shipping"
+                        >
+                            <span
+                                class="status-dot status-dot--shipping"
+                            ></span>
+                            Shipping
+                        </button>
+                        <button
+                            class="orders-filter__btn"
+                            data-status="Delivered"
+                        >
+                            <span
+                                class="status-dot status-dot--delivered"
+                            ></span>
+                            Delivered
+                        </button>
+                        <button
+                            class="orders-filter__btn"
+                            data-status="Cancelled"
+                        >
+                            <span
+                                class="status-dot status-dot--cancelled"
+                            ></span>
+                            Cancelled
+                        </button>
+                    </div>
+
+                    <!-- ORDERS LIST -->
+                    <div class="orders-list" id="orders-list">
+                        <!-- Loading -->
+                        <div class="orders-loading" id="orders-loading">
+                            <i class="fa-solid fa-circle-notch fa-spin"></i>
+                            Loading your orders...
+                        </div>
+
+                        <!-- Empty -->
+                        <div class="orders-empty" id="orders-empty" hidden>
+                            <div class="orders-empty__icon">📦</div>
+                            <p class="orders-empty__title">No orders found</p>
+                            <p class="orders-empty__sub">
+                                Looks like you haven't placed any orders yet.
+                            </p>
+                            <a
+                                href="../menu/index.html"
+                                class="orders-empty__btn"
+                                >Browse Menu</a
+                            >
+                        </div>
+
+                        <!-- Cards rendered by JS -->
+                        <div class="orders-grid" id="orders-grid"></div>
+                    </div>
+
+                    <!-- PAGINATION -->
+                    <div
+                        class="orders-pagination"
+                        id="orders-pagination"
+                        hidden
+                    >
+                        <button class="pagination-btn" id="btn-prev">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <div
+                            class="pagination-pages"
+                            id="pagination-pages"
+                        ></div>
+                        <button class="pagination-btn" id="btn-next">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </main>
+
+            <footer id="footer" class="footer"></footer>
+        </div>
+
+        <!-- ORDER DETAIL MODAL -->
+        <div class="order-detail-modal" id="order-detail-modal" hidden>
+            <div class="order-detail-modal__backdrop" id="modal-backdrop"></div>
+            <div class="order-detail-modal__box">
+                <div class="order-detail-modal__header">
+                    <h2>Order Detail</h2>
+                    <button class="order-detail-modal__close" id="modal-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="order-detail-modal__body" id="modal-body">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- REVIEW MODAL -->
+        <div class="review-modal" id="review-modal" hidden>
+            <div class="review-modal__backdrop" id="review-backdrop"></div>
+            <div class="review-modal__box">
+                <div class="review-modal__header">
+                    <h2>Rate Your Order ☕</h2>
+                    <button class="review-modal__close" id="review-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <p class="review-modal__sub">
+                    How was your experience? Rate each item below.
+                </p>
+                <div class="review-modal__items" id="review-items">
+                    <!-- Rendered by JS -->
+                </div>
+                <div class="review-modal__footer">
+                    <button class="review-submit-btn" id="review-submit">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Reviews
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../js/layouts/partials.js"></script>
+        <script type="module" src="../../js/pages/orders.js"></script>
+    </body>
+</html>

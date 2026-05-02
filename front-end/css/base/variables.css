@@ -1,0 +1,23 @@
+:root {
+  --color-primary: #ffbe76;
+  --color-second: #fcf9eb;
+  --color-button: #273c75;
+  --color-text: #000;
+  --color-border: #dcdde1;
+  --color-bg: #ffffff;
+  --color-heart: #e74c3c;
+  --color-price: #e67e22;
+
+  --space-sm: 0.8rem;
+  --space-md: 1.6rem;
+  --space-lg: 2.4rem;
+
+  --radius-sm: 0.6rem;
+  --radius-md: 1.5rem;
+
+  --font-sm: 1.4rem;
+
+  --transition: 0.3s;
+
+  --transform-scale: 1.05;
+}
