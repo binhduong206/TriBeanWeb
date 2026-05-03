@@ -92,26 +92,6 @@ builder.Services.AddAuthentication(options =>
         ),
         ClockSkew = TimeSpan.Zero
     };
-
-    // Debug: Log JWT validation errors
-    options.Events = new JwtBearerEvents
-    {
-        OnAuthenticationFailed = context =>
-        {
-            Console.WriteLine($"❌ JWT Error: {context.Exception.Message}");
-            return Task.CompletedTask;
-        },
-        OnTokenValidated = context =>
-        {
-            Console.WriteLine("✅ JWT Token Valid");
-            return Task.CompletedTask;
-        },
-        OnChallenge = context =>
-        {
-            Console.WriteLine($"⚠️ JWT Challenge: {context.ErrorDescription}");
-            return Task.CompletedTask;
-        }
-    };
 });
 
 
@@ -181,7 +161,10 @@ app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
     db.Database.Migrate();
+
+    await DbSeeder.SeedAsync(db);
 }
 
 
